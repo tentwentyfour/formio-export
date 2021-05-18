@@ -1,4 +1,4 @@
-import Html2Pdf from 'js-html2pdf';
+import html2pdf from 'html2pdf.js';
 import FormioExportUtils from '../../utils';
 
 export default (config = {}) => {
@@ -14,7 +14,10 @@ export default (config = {}) => {
           default: false
         }
       });
-      Html2Pdf.getPdf(config).then((pdf) => resolve(pdf));
+
+      html2pdf().set({
+        html2canvas: config.html2canvas
+      }).from(config.source).save(config.filename).then(resolve, reject);
     } catch (error) {
       console.error(error);
       reject(error);

@@ -97,7 +97,13 @@ class FormioExport {
     return new Promise((resolve, reject) => {
       try {
         this.toHtml().then((source) => {
-          toPdf(Object.assign(config, { source: source })).then((pdf) => resolve(pdf));
+          toPdf(Object.assign(config, {
+            source: source,
+            html2canvas: {
+              scrollX: 0,
+              scrollY: 0
+            }
+          })).then((pdf) => resolve(pdf));
         });
       } catch (error) {
         reject(error);
