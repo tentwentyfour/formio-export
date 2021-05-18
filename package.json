@@ -46,7 +46,7 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
-    "html2pdf.js": "^0.9.3",
+    "html2pdf.js": "git+https://github.com/eKoopmans/html2pdf.js.git#ccb3444d461844bd4949eb1f698a693af2bab17a",
     "lodash": "^4.17.21"
   }
 }
