@@ -42,11 +42,11 @@
     "jsdom-global": "^3.0.2",
     "mocha": "^5.2.0",
     "webpack": "^4.46.0",
-    "webpack-cli": "^2.1.5",
+    "webpack-cli": "^3.3.12",
     "yargs": "^11.1.1"
   },
   "dependencies": {
-    "html2pdf.js": "git+https://github.com/tentwentyfour/html2pdf.js.git",
+    "html2pdf.js": "^0.10.1",
     "lodash": "^4.17.21"
   }
 }
