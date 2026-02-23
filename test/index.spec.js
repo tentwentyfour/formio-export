@@ -1,12 +1,17 @@
-import chai from 'chai';
-import FormioExport from '../lib/formio-export.js';
+import { expect } from 'chai';
+import FormioExport from '../src/formio-export.js';
+import fs from 'fs';
+import path from 'path';
+import jsdomGlobal from 'jsdom-global';
 
-import form from './samples/form.json';
-import submission from './samples/submission.json';
+jsdomGlobal(); // injects window, document, etc.
 
-chai.expect();
-
-const expect = chai.expect;
+const form = JSON.parse(
+  fs.readFileSync(path.resolve('./test/samples/form.json'), 'utf-8')
+);
+const submission = JSON.parse(
+  fs.readFileSync(path.resolve('./test/samples/submission.json'), 'utf-8')
+);
 
 let lib;
 
@@ -14,15 +19,16 @@ describe('Given an instance of FormioExport class', () => {
   before(() => {
     lib = new FormioExport(form, submission);
   });
+
   describe('when I need the constructor name', () => {
     it('should return the name', () => {
-      expect(lib.constructor.name).to.be.equal('FormioExport');
+      expect(lib.constructor.name).to.equal('FormioExport');
     });
   });
 
   describe('when I need the formio component', () => {
     it('should return the component', () => {
-      expect(lib.component.type).to.be.equal(form.type);
+      expect(lib.component.type).to.equal(form.type);
     });
   });
 

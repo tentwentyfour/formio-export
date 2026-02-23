@@ -1,20 +1,20 @@
 import _ from 'lodash';
-import FormioExportUtils from './utils';
-import FormioComponent from './components/formio';
+import FormioExportUtils from './utils/index.js';
+import FormioComponent from './components/formio/index.js';
 
 // Import export plugins
 import {
   toHtml,
   toPdf,
   toXlsx
-} from './plugins';
+} from './plugins/index.js';
 
 /**
  * Class for exporting formio components into different formats
  *
  * @class FormioExport
  */
-class FormioExport {
+export class FormioExport {
 
   /**
    * Creates an instance of FormioExport.

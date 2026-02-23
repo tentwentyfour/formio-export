@@ -1,5 +1,5 @@
 import html2pdf from 'html2pdf.js';
-import FormioExportUtils from '../../utils';
+import FormioExportUtils from '../../utils/index.js';
 
 export default (config = {}) => {
   return new Promise((resolve, reject) => {

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",                  // modern JS for browser
+    "module": "ESNext",                  // ESM output
+    "outDir": "lib",                     // build folder
+    "declaration": true,                 // generate .d.ts for TS consumers
+    "declarationMap": true,
+    "allowJs": true,                     // include JS files in compilation
+    "checkJs": false,                     // optional: don't type-check JS
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "sourceMap": true
+  },
+  "include": ["src/**/*"]
+}
